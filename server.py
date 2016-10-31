@@ -2,6 +2,8 @@
 #
 # Author: Lukebob
 #
+# Python 2.7
+#
 # Requires the pip instilation of twilio, (pip install twilio)
 #
 # Requires "IPTABLES"
