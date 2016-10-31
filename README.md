@@ -7,7 +7,7 @@ Also, you must make a free account at https://www.twilio.com, after this you can
 
 ** Extract the files to any folder, then give them all exe permissions like so **
 
- *``` git clone https://github.com/LukeBob/Twilio-python.git ```
- *``` cd Twilio-python && chmod 755 *.py```
+* ``` git clone https://github.com/LukeBob/Twilio-python.git```
+* ``` cd Twilio-python && chmod 755 *.py```
  
- ** Then you can run the scripts... **  ./myscript 
+ ** Then you can run the scripts...   ./myscript **
