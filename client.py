@@ -11,7 +11,7 @@ from Crypto.Cipher import AES
 import os
 salt = '' # salt to be shared with server
 key32 = "{: <32}".format(salt).encode("utf-8")
-def Main():
+def main():
     host = '127.0.0.1' # Server Host
     port = 50097       # Server Port
     iv = os.urandom(16) 
@@ -29,4 +29,4 @@ def Main():
     s.close()
 
 if __name__ == '__main__':
-    Main()
+    main()
