@@ -2,8 +2,6 @@
 #
 # Author: Lukebob
 #
-# Python 2.7
-#
 # Requires the pip instilation of twilio, (pip install twilio)
 #
 # Requires "IPTABLES"
@@ -17,9 +15,13 @@ import time
 from twilio.rest import TwilioRestClient
 import subprocess
 import sys, traceback
-
-accountSid = 'AC' # Account sid
+from Crypto.Cipher import AES
+import os
+accountSid = '' # Account sid
 authToken = '' # Account auth token
+
+salt = '' # salt to be shared with client
+key32 = "{: <32}".format(salt).encode("utf-8")
 
 def iptables(person):
     subprocess.call('/sbin/iptables -I INPUT -s '+person+' -j DROP',shell=True)
@@ -28,7 +30,7 @@ def Main():
     try:
         trusted = ['127.0.0.1'] # trusted ip list
         host = '127.0.0.1'  # server host
-        port = 50098            # server port
+        port = 50097            # server port
         s = socket.socket()
         s.bind((host, port))
         s.listen(1)
@@ -43,14 +45,17 @@ def Main():
             time.sleep(1) 
             print 'Banned '+person+' with iptables!..'
                     
-        while True:            
-            data = c.recv(1024)         
+        while True:
+            iv = os.urandom(16) 
+            obj2 = AES.new(key32, AES.MODE_CFB, iv)           
+            data = c.recv(1024)
+            data = obj2.decrypt(data)         
             alldata = 'Data: '+data+' Recived From Host: '+person
             if not data:
                 break
             client = TwilioRestClient(accountSid, authToken)
-            client.messages.create( body=data, to=<Your Mobile number>, from_=<Twilio mobile number>)
-            subprocess.call('echo '+alldata+' >> test.txt', shell=True)
+            client.messages.create( body=data, to=<Your Phone Number>, from_=<Twilio Phoone Number>) # Twilio, and own number here.
+            subprocess.call('echo '+alldata+' >> TwilioData.txt', shell=True)
             time.sleep(300)  # Message delay
         c.close()
     except KeyboardInterrupt:
