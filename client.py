@@ -1,5 +1,7 @@
 #!/usr/bin/python
 #
+# Python 2.7
+#
 # Author: LukeBob
 #
 # Simple client to send the messages to the server.
