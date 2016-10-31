@@ -3,7 +3,7 @@
 All scripts require pip instilation og twilio. (pip install twilio) 
 Also, you must make a free account at https://www.twilio.com, after this you can aquire your Account SID and Auth token.
 
-## Setup ## 
+# Setup  
 
 Extract the files to any folder, then give them all exe permissions like so.
 
