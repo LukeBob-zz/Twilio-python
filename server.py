@@ -9,7 +9,7 @@
 # Send a message to your Mobile using any Computer/Server running unix... Works but not yet finished.
 #
 # "MAKE SURE YOU WHITELIST YOUR IP IN THE TRUSTED LIST", if your using over wan use wan ip.
-
+import hashlib
 import socket
 import time
 from twilio.rest import TwilioRestClient
@@ -17,20 +17,20 @@ import subprocess
 import sys, traceback
 from Crypto.Cipher import AES
 import os
-accountSid = '' # Account sid
-authToken = '' # Account auth token
+accountSid = 'AC83b910b33e4c26ebf72c904bb2c36052' # Account sid
+authToken = '5a0c6d337bbfbc0ef69442fd361b3b0d' # Account auth token
 
-salt = '' # salt to be shared with client
-key32 = "{: <32}".format(salt).encode("utf-8")
+key32 = hashlib.sha256("test password").digest()
+iv = hashlib.sha256("test password").digest()[:16]
 
 def iptables(person):
     subprocess.call('/sbin/iptables -I INPUT -s '+person+' -j DROP',shell=True)
 
 def Main():
     try:
-        trusted = ['127.0.0.1'] # trusted ip list
+        trusted = ['127.0.0.1', '192.168.1.66'] # trusted ip list
         host = '127.0.0.1'  # server host
-        port = 50097            # server port
+        port = 50098            # server port
         s = socket.socket()
         s.bind((host, port))
         s.listen(1)
@@ -45,18 +45,17 @@ def Main():
             time.sleep(1) 
             print 'Banned '+person+' with iptables!..'
                     
-        while True:
-            iv = os.urandom(16) 
+        while True: 
             obj2 = AES.new(key32, AES.MODE_CFB, iv)           
             data = c.recv(1024)
-            data = obj2.decrypt(data)         
-            alldata = 'Data: '+data+' Recived From Host: '+person
+            data1 = obj2.decrypt(data)         
+            alldata = 'Data: '+data1+' Recived From Host: '+person
             if not data:
                 break
-            client = TwilioRestClient(accountSid, authToken)
-            client.messages.create( body=data, to=<Your Phone Number>, from_=<Twilio Phoone Number>) # Twilio, and own number here.
-            subprocess.call('echo '+alldata+' >> TwilioData.txt', shell=True)
-            time.sleep(300)  # Message delay
+            #client = TwilioRestClient(accountSid, authToken)
+            #client.messages.create( body=data, to='+447724346223', from_='+441438305045')
+            subprocess.call('echo '+alldata+' >> test.txt', shell=True)
+            #time.sleep(300)  # Message delay
         c.close()
     except KeyboardInterrupt:
         print ("Exiting...")
