@@ -14,9 +14,7 @@ import sys
 key32 = hashlib.sha256("test password").digest()
 iv = hashlib.sha256("test password").digest()[:16]
 
-print iv
-sys.exit(0)
-def Main():
+def main():
     host = '127.0.0.1' # Server Host
     port = 50098       # Server Port
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -33,4 +31,4 @@ def Main():
     s.close()
 
 if __name__ == '__main__':
-    Main()
+    main()
