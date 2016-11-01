@@ -11,7 +11,7 @@ from Crypto.Cipher import AES
 import os
 import sys
 
-key32 = hashlib.sha256("test password").digest()
+key32 = hashlib.sha256("test password").digest()[:256]
 iv = hashlib.sha256("test password").digest()[:16]
 
 def main():
