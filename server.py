@@ -22,7 +22,7 @@ import os
 accountSid = '' # Account sid
 authToken = '' # Account auth token
 
-key32 = hashlib.sha256("test password").digest()
+key32 = hashlib.sha256("test password").digest()[:256]
 iv = hashlib.sha256("test password").digest()[:16]
 
 def iptables(person):
