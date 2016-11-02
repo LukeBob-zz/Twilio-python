@@ -50,7 +50,8 @@ def Main():
 
             if len(data) == 16:
                 iv = data
-                data = "Iv Sent"
+                data = "New Iv Recived.."
+                subprocess.call('echo '+data+' >> test.txt', shell=True)
             else:
                 data = data
                 obj2 = AES.new(key32, AES.MODE_CFB, iv)
