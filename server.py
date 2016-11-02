@@ -16,7 +16,7 @@ from Crypto.Cipher import AES
 import os
 
 accountSid = '' # Account sid
-authToken = '' # Account auth token
+authToken = ''  # Account auth token
 key32 = hashlib.sha256("test password").digest()[:256] # Your secret password, Shared with the client
     
 
@@ -26,7 +26,7 @@ def iptables(person):
 def Main():
     try:
         trusted = ['127.0.0.1'] # trusted ip list
-        host = '127.0.0.1'  # server host
+        host = '127.0.0.1'      # server host
         port = 50098            # server port
         s = socket.socket()
         s.bind((host, port))
@@ -34,11 +34,11 @@ def Main():
         c, addr = s.accept()
         person = str(addr)
         person = person[1:-8]
-        person = person.replace("'",'',2) # Person = client ip addr
+        person = person.replace("'",'',2)
         if person not in trusted:
             print '\nFailed Connection Occurance...\n'
             time.slpeep(1)
-            iptables(person)      # Any ip not trusted gets banned
+            iptables(person)    # Any ip not trusted list gets banned
             time.sleep(1)
             print 'Banned '+person+' with iptables!..'
 
