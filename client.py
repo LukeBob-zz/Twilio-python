@@ -14,6 +14,7 @@ import sys
 import time
 from Crypto import Random
 import random
+
 key32 = hashlib.sha256("test password").digest()[:256] # Super secret password shared with server.
 
 def main():
