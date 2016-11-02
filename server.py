@@ -1,3 +1,11 @@
+#!/usr/bin/python2.7
+#
+# Author: LukeBob
+#
+# Requires the pip instilation of Twilio. ==> (pip install twilio)
+#
+# If you want to use the text function you will have to make a free account at https://www.twilio.com .
+
 import hashlib
 import socket
 import time
@@ -6,10 +14,10 @@ import subprocess
 import sys, traceback
 from Crypto.Cipher import AES
 import os
+
 accountSid = '' # Account sid
 authToken = '' # Account auth token
-
-key32 = hashlib.sha256("test password").digest()[:256]
+key32 = hashlib.sha256("test password").digest()[:256] # Your secret password, Shared with the client
     
 
 def iptables(person):
