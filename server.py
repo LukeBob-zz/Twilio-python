@@ -61,9 +61,7 @@ def Main():
                 #client.messages.create( body=data, to=<Your Phone Num>, from_=,Twilio Phone Num.)
                 subprocess.call('echo '+alldata+' >> test.txt', shell=True)
                 #time.sleep(300)  # Message delay
-            
-
-                    
+                                
         c.close()
     except KeyboardInterrupt:
         print ("Exiting...")
