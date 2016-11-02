@@ -1,20 +1,20 @@
-#!/usr/bin/python
+#!/usr/bin/python2.7
 #
 # Author: LukeBob
 #
-# Simple client to send the messages to the server.
-#
-# You can only send a message every 300 sec's, you can adjust this in the server.py, by changing the "Message delay" num lower or higher.
+# Creates a random iv and sends it before the cyphertext the server then
+# gets the iv and decrypts the ciphertext using the shared key and cypher.
+
 import hashlib
 import socket
 from Crypto.Cipher import AES
-import os
-import sys
+import time
+import random
 
 key32 = hashlib.sha256("test password").digest()[:256]
-iv = hashlib.sha256("test password").digest()[:16]
 
 def main():
+    iv = Random.get_random_bytes(16)
     host = '127.0.0.1' # Server Host
     port = 50098       # Server Port
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -22,12 +22,16 @@ def main():
     message = raw_input('Message => ')
     obj = AES.new(key32, AES.MODE_CFB, iv)
     ciphertext = obj.encrypt(message)
+  
     while message != 'q' and message != 'quit':
-        obj = AES.new(key32, AES.MODE_CFB, iv) 
+        s.send(iv)
+        time.sleep(5)
         s.send(ciphertext)
+        iv = Random.get_random_bytes(16)
         message = raw_input('Message => ')
         obj = AES.new(key32, AES.MODE_CFB, iv)
         ciphertext = obj.encrypt(message)
+        time.sleep(2)
     s.close()
 
 if __name__ == '__main__':
