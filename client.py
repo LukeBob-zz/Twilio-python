@@ -34,7 +34,7 @@ def main():
             iv = Random.get_random_bytes(16)
             message = raw_input('Message => ')
             if len(message) == 16:
-               message = message + '.'
+                message = message + '.'
             obj = AES.new(key32, AES.MODE_CFB, iv)
             ciphertext = obj.encrypt(message)
         s.close()
