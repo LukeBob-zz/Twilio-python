@@ -25,6 +25,8 @@ def main():
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((host,port))
         message = raw_input('Message => ')
+        if len(message) == 16:
+               message = message + '.'
         obj = AES.new(key32, AES.MODE_CFB, iv)
         ciphertext = obj.encrypt(message)
   
@@ -34,6 +36,8 @@ def main():
             s.send(ciphertext)
             iv = Random.get_random_bytes(16)
             message = raw_input('Message => ')
+            if len(message) == 16:
+               message = message + '.'
             obj = AES.new(key32, AES.MODE_CFB, iv)
             ciphertext = obj.encrypt(message)
         s.close()
