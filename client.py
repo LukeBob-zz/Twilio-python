@@ -30,7 +30,7 @@ def main():
   
         while message != 'q' and message != 'quit':
             s.send(iv)
-            time.sleep(5)
+            time.sleep(2)
             s.send(ciphertext)
             iv = Random.get_random_bytes(16)
             message = raw_input('Message => ')
