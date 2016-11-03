@@ -36,7 +36,6 @@ def main():
             message = raw_input('Message => ')
             obj = AES.new(key32, AES.MODE_CFB, iv)
             ciphertext = obj.encrypt(message)
-            time.sleep(2)
         s.close()
 
    
