@@ -15,6 +15,7 @@ import sys, traceback
 from Crypto.Cipher import AES
 import os
 
+
 accountSid = '' # Account sid
 authToken = ''  # Account auth token
 key32 = hashlib.sha256("test password").digest()[:256] # Your secret password, Shared with the client
@@ -55,7 +56,7 @@ def Main():
             else:
                 obj2 = AES.new(key32, AES.MODE_CFB, iv)
                 data1 = obj2.decrypt(data)
-                alldata = 'Data: '+data1+' Recived From Host: '+person
+                alldata = 'Data: '+data1+'  Recieved From Host: '+person
                 #client = TwilioRestClient(accountSid, authToken)
                 #client.messages.create( body=data, to=<Your Phone Num>, from_=,Twilio Phone Num.)
                 subprocess.call('echo '+alldata+' >> test.txt', shell=True)
