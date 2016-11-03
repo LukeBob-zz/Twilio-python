@@ -53,7 +53,6 @@ def Main():
                 data = "New Iv Recived.."
                 subprocess.call('echo '+data+' >> test.txt', shell=True)
             else:
-                data = data
                 obj2 = AES.new(key32, AES.MODE_CFB, iv)
                 data1 = obj2.decrypt(data)
                 alldata = 'Data: '+data1+' Recived From Host: '+person
