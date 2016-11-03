@@ -1,9 +1,6 @@
 #!/usr/bin/python2.7
 #
 # Author: LukeBob
-#
-# Creates a random iv and sends it before the cyphertext the server then
-# gets the iv and decrypts the ciphertext using the shared key and cypher.
 
 
 import hashlib
