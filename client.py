@@ -7,7 +7,7 @@ import hashlib
 import socket
 from Crypto.Cipher import AES
 import os
-import sys
+import sys, traceback
 import time
 from Crypto import Random
 import random
