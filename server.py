@@ -6,6 +6,7 @@
 #
 # If you want to use the text function you will have to make a free account at https://www.twilio.com .
 
+import datetime
 import hashlib
 import socket
 import time
@@ -16,6 +17,7 @@ from Crypto.Cipher import AES
 import os
 import readline
 
+now = datetime.datetime.now().strftime("%d/%m/%y  %H-%M")
 accountSid = '' # Account sid
 authToken = ''  # Account auth token
 key32 = hashlib.sha256("test password").digest()[:256] # Your secret password, Shared with the client
@@ -56,7 +58,7 @@ def Main():
             else:
                 obj2 = AES.new(key32, AES.MODE_CFB, iv)
                 data1 = obj2.decrypt(data)
-                alldata = 'Data: '+data1+'  Recieved From Host: '+person
+                alldata = 'Data: '+data1+' -  Host: '+person+'  -  Time: '+now
                 #client = TwilioRestClient(accountSid, authToken)
                 #client.messages.create( body=data, to=<Your Phone Num>, from_=,Twilio Phone Num.)
                 subprocess.call('echo '+alldata+' >> test.txt', shell=True)
