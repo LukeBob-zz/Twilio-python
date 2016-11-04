@@ -14,7 +14,7 @@ import subprocess
 import sys, traceback
 from Crypto.Cipher import AES
 import os
-
+import readline
 
 accountSid = '' # Account sid
 authToken = ''  # Account auth token
