@@ -44,6 +44,7 @@ def main():
         print ("Exiting...")
     except Exception:
         traceback.print_exc(file=sys.stdout)
+    s.close()
     sys.exit(0)
 
 
