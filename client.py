@@ -10,7 +10,7 @@ import os
 import sys, traceback
 import time
 from Crypto import Random
-
+import readline
 
 key32 = hashlib.sha256("test password").digest()[:256] # Super secret password shared with server.
 
