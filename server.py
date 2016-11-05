@@ -60,7 +60,7 @@ def Main():
                 data1 = obj2.decrypt(data)
                 alldata = 'Data: '+data1+' -  Host: '+person+'  -  Time: '+now
                 #client = TwilioRestClient(accountSid, authToken)
-                #client.messages.create( body=data, to=<Your Phone Num>, from_=,Twilio Phone Num.)
+                #client.messages.create( body=data1, to=<Your Phone Num>, from_=,Twilio Phone Num.)
                 subprocess.call('echo '+alldata+' >> test.txt', shell=True)
                 #time.sleep(300)  # Message delay
                                 
