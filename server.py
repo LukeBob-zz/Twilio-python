@@ -14,7 +14,6 @@ from twilio.rest import TwilioRestClient
 import subprocess
 import sys, traceback
 from Crypto.Cipher import AES
-import os
 import readline
 
 now = datetime.datetime.now().strftime("%d/%m/%y  %H-%M")
