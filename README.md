@@ -15,3 +15,8 @@ Then you can run the scripts...   ./myscript
 # RoboPing
 
 **RoboPing** is a bot that pings your server every 20 seconds. if it gets no response it texts your mobile through the **Twillio API**.
+
+
+# Server & client
+
+**The Server** is part of the ***encrypted messaging tools***. it uses a set password shared by client and server and generates a ***random iv*** every new message. Also you can **define ip adresses allowed to connect** in **ip whitelist**. Its purpose is to **send encrypted messages** to the server who will **decrypt the message and text the phone number linked to the twillio API**.
