@@ -1,4 +1,5 @@
-[![Packagist](https://img.shields.io/badge/app-twillio-orange.svg)]()  
+[![Packagist](https://img.shields.io/badge/app-twillio-orange.svg)]()  [![Packagist](https://img.shields.io/badge/platform-win--64%20%7C%20linux--64%20%7C%20osx--64-lightgrey.svg)]()  [![Packagist](https://img.shields.io/badge/language-python3.5-brightgreen.svg)]()  
+ 
 
 # Twilio-python
 
