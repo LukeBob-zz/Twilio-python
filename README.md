@@ -11,3 +11,7 @@ Extract the files to any folder, then give them all exe permissions like so.
 * ``` cd Twilio-python && chmod 755 *.py```
  
 Then you can run the scripts...   ./myscript 
+
+# RoboPing
+
+RoboPing is a bot that pings specified server every 20 seconds. if it gets no response it texts your mobile through the Twillio API
