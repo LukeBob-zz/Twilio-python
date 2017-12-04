@@ -1,4 +1,4 @@
-[![Packagist](https://img.shields.io/badge/app-twillio-orange.svg)]() [![Packagist]()]() 
+[![Packagist](https://img.shields.io/badge/app-twillio-orange.svg)]()  
 
 # Twilio-python
 
