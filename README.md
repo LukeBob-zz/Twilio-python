@@ -1,7 +1,7 @@
 # Twilio-python
 
-All scripts require pip instilation og twilio. (pip install twilio) 
-Also, you must make a free account at https://www.twilio.com, after this you can aquire your Account SID and Auth token.
+All scripts require pip instilation of twilio. (pip install twilio) 
+Also, you must make a free account at **https://www.twilio.com**, after this you can aquire your **Account SID** and **Auth token.**
 
 # Setup  
 
@@ -14,4 +14,4 @@ Then you can run the scripts...   ./myscript
 
 # RoboPing
 
-**RoboPing** is a bot that pings your server every 20 seconds. if it gets no response it texts your mobile through the Twillio API
+**RoboPing** is a bot that pings your server every 20 seconds. if it gets no response it texts your mobile through the **Twillio API**.
