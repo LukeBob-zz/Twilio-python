@@ -14,4 +14,4 @@ Then you can run the scripts...   ./myscript
 
 # RoboPing
 
-RoboPing is a bot that pings specified server every 20 seconds. if it gets no response it texts your mobile through the Twillio API
+*RoboPing* is a bot that pings your server every 20 seconds. if it gets no response it texts your mobile through the Twillio API
