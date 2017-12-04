@@ -19,4 +19,4 @@ Then you can run the scripts...   ./myscript
 
 # Server & client
 
-**The Server** is part of the ***encrypted messaging tools***. **it uses a set password shared by client and server** and generates a **random iv** every new message. Also you can **define ip adresses allowed to connect** in **ip whitelist**. Its purpose is to **send encrypted messages** to the server who will **decrypt the message and text the phone number linked to the twillio API**.
+Both client and server are part of the ***encrypted messaging tools***. **they use a set password shared by both client and server**. The client generates a **random iv** every new message. Also you can **define ip adresses allowed to connect** in **ip whitelist**. Its purpose is to **send encrypted messages** to the server who will **decrypt the message and text the phone number linked to the twillio API**.
